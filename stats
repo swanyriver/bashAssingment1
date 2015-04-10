@@ -23,34 +23,53 @@ stat_file="$$statfile"
 ##check number
 echo "$# of command args recieved" >>$logfile
 
-#if [ "$#" != "1" && "$#" != "2" ]; then
 if [[ ! ( "$#" == 1 || "$#" == "2" ) ]]; then
 
-    echo "incorect num arguments"
-fi
-
-
-#detect std in
-if [ ! -t 0 ]; then
-	echo "running interactivelly" >>$logfile
-
-    #DUMP CONTENTS OF STDIN TO FILE
-
-	#create a new empty file
-	cp /dev/null $stat_file
-
-	while read inputLine
-	do
-		echo $inputLine >> $stat_file
-	done
-else
-    #no file specified but no data available in stderr
-	echo "no file specified and no input available, Exiting now">&2
+    echo "incorect num arguments recieved" >&2
     exit 1
-
 fi
 
-#check file is readable
+
+############error check and record -r/-c########
+###TODO
+###check that it is -r/-c
+###assign collumns accordingly
+
+
+############error check and record filename######
+if [[ "$#" == "2" ]]; then
+    stat_file=$2
+    echo "stats are located in $stat_file" >>$logfile
+
+    #check file is present and readable
+    if [ ! -r "$stat_file" ]; then
+        echo "File is unreadable or does not exist" >&2
+        exit 1
+    fi
+
+
+
+else
+    #detect std in
+    if [ ! -t 0 ]; then
+    	echo "running interactivelly" >>$logfile
+
+        #DUMP CONTENTS OF STDIN TO FILE
+
+    	#create a new empty file
+    	cp /dev/null $stat_file
+
+    	while read inputLine
+    	do
+    		echo $inputLine >> $stat_file
+    	done
+    else
+        #no file specified but no data available in stderr
+    	echo "no file specified and no input available, Exiting now">&2
+        exit 1
+    fi
+
+fi
 
 
 ####Stats program started successfully, proper args and readable file###
@@ -58,3 +77,6 @@ fi
 #rotate if collumn requested
 
 #count items per row
+
+
+exit 0
