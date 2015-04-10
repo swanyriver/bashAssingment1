@@ -518,3 +518,390 @@ getgroup outputing collumn 2
 outputing collum stats
 program exiting with exit code 0
 rm: cannot remove ‘12455*’: No such file or directory
+
+
+-------Logging For stats pid 12647---------
+2 of command args recieved
+stats are located in test_file
+abreviated flag is -r
+Rows selected
+6 rows with 30 each
+outputing row stats
+program exiting with exit code 0
+rm: cannot remove ‘12647*’: No such file or directory
+
+
+-------Logging For stats pid 12660---------
+2 of command args recieved
+stats are located in test_file
+abreviated flag is -r
+Rows selected
+6 rows with 5 each
+outputing row stats
+program exiting with exit code 0
+rm: cannot remove ‘12660*’: No such file or directory
+
+
+-------Logging For stats pid 12674---------
+2 of command args recieved
+stats are located in test_file
+abreviated flag is -r
+Rows selected
+data has 6 rows with 5 entries each
+outputing row stats
+program exiting with exit code 0
+rm: cannot remove ‘12674*’: No such file or directory
+
+
+-------Logging For stats pid 12690---------
+2 of command args recieved
+stats are located in test_file
+abreviated flag is -r
+Rows selected
+data has 6 rows with 5 entries each
+outputing row stats
+program exiting with exit code 0
+rm: cannot remove ‘12690*’: No such file or directory
+
+
+-------Logging For stats pid 12707---------
+2 of command args recieved
+stats are located in test_file
+abreviated flag is -c
+collumns selected
+data has 6 rows with 5 entries each
+outputing collum stats
+program exiting with exit code 0
+rm: cannot remove ‘12707*’: No such file or directory
+
+
+-------Logging For stats pid 12717---------
+2 of command args recieved
+stats are located in test_file
+abreviated flag is -c
+collumns selected
+data has 6 rows with 5 entries each
+entries/fields adjusted for collum fields:5 entries:6
+outputing collum stats
+program exiting with exit code 0
+rm: cannot remove ‘12717*’: No such file or directory
+
+
+-------Logging For stats pid 12895---------
+2 of command args recieved
+stats are located in test_file
+abreviated flag is -r
+Rows selected
+data has 6 rows with 5 entries each
+getgroup outputing row num_fields
+sum of row/col num_fields is:
+outputing row stats
+program exiting with exit code 0
+rm: cannot remove ‘12895*’: No such file or directory
+
+
+-------Logging For stats pid 12919---------
+2 of command args recieved
+stats are located in test_file
+abreviated flag is -r
+Rows selected
+data has 6 rows with 5 entries each
+processing row/group: num_fields
+getgroup outputing row num_fields
+sum of row/col num_fields is:
+outputing row stats
+program exiting with exit code 0
+rm: cannot remove ‘12919*’: No such file or directory
+
+
+-------Logging For stats pid 12934---------
+2 of command args recieved
+stats are located in test_file
+abreviated flag is -r
+Rows selected
+data has 6 rows with 5 entries each
+processing row/group: 6
+getgroup outputing row 6
+sum of row/col 6 is:
+outputing row stats
+program exiting with exit code 0
+rm: cannot remove ‘12934*’: No such file or directory
+
+
+-------Logging For stats pid 12960---------
+2 of command args recieved
+stats are located in test_file
+abreviated flag is -r
+Rows selected
+data has 6 rows with 5 entries each
+processing row/group: 1
+getgroup outputing row 1
+sum of row/col 1 is:
+outputing row stats
+program exiting with exit code 0
+rm: cannot remove ‘12960*’: No such file or directory
+
+
+-------Logging For stats pid 12977---------
+2 of command args recieved
+stats are located in test_file
+abreviated flag is -r
+Rows selected
+data has 6 rows with 5 entries each
+processing row/group: 1
+getgroup outputing row 1
+sum of row/col 1 is:
+outputing row stats
+program exiting with exit code 0
+rm: cannot remove ‘12977*’: No such file or directory
+
+
+-------Logging For stats pid 12995---------
+2 of command args recieved
+stats are located in test_file
+abreviated flag is -c
+collumns selected
+data has 6 rows with 5 entries each
+entries/fields adjusted for collum fields:5 entries:6
+processing row/group: 1
+getgroup outputing collumn 1
+sum of row/col 1 is:
+outputing collum stats
+program exiting with exit code 0
+rm: cannot remove ‘12995*’: No such file or directory
+
+
+-------Logging For stats pid 13012---------
+2 of command args recieved
+stats are located in test_file
+abreviated flag is -c
+collumns selected
+data has 6 rows with 5 entries each
+entries/fields adjusted for collum fields:5 entries:6
+processing row/group: 1
+getgroup outputing collumn 1
+sum of row/col 1 is:
+outputing collum stats
+program exiting with exit code 0
+rm: cannot remove ‘13012*’: No such file or directory
+
+
+-------Logging For stats pid 13032---------
+2 of command args recieved
+stats are located in test_file
+abreviated flag is -c
+collumns selected
+data has 6 rows with 5 entries each
+entries/fields adjusted for collum fields:5 entries:6
+processing row/group: 1
+getgroup outputing collumn 1
+sum of row/col 1 is:
+outputing collum stats
+program exiting with exit code 0
+rm: cannot remove ‘13032*’: No such file or directory
+
+
+-------Logging For stats pid 13049---------
+2 of command args recieved
+stats are located in test_file
+abreviated flag is -c
+collumns selected
+data has 6 rows with 5 entries each
+entries/fields adjusted for collum fields:5 entries:6
+processing row/group: 1
+getgroup outputing collumn 1
+outputing collum stats
+program exiting with exit code 0
+rm: cannot remove ‘13049*’: No such file or directory
+
+
+-------Logging For stats pid 13092---------
+2 of command args recieved
+stats are located in test_file
+abreviated flag is -c
+collumns selected
+data has 6 rows with 5 entries each
+entries/fields adjusted for collum fields:5 entries:6
+processing row/group: 1
+getgroup outputing collumn 1
+outputing collum stats
+program exiting with exit code 0
+rm: cannot remove ‘13092*’: No such file or directory
+
+
+-------Logging For stats pid 13127---------
+2 of command args recieved
+stats are located in test_file
+abreviated flag is -c
+collumns selected
+data has 6 rows with 5 entries each
+entries/fields adjusted for collum fields:5 entries:6
+processing row/group: 1
+getgroup outputing collumn 1
+1	9	6	3	3	6	
+sum of row/col 1 is:28
+outputing collum stats
+program exiting with exit code 0
+rm: cannot remove ‘13127*’: No such file or directory
+
+
+-------Logging For stats pid 13142---------
+2 of command args recieved
+stats are located in test_file
+abreviated flag is -r
+Rows selected
+data has 6 rows with 5 entries each
+processing row/group: 1
+getgroup outputing row 1
+1	1	1	1	1
+sum of row/col 1 is:5
+outputing row stats
+program exiting with exit code 0
+rm: cannot remove ‘13142*’: No such file or directory
+
+
+-------Logging For stats pid 13182---------
+2 of command args recieved
+stats are located in test_file
+abreviated flag is -r
+Rows selected
+data has 6 rows with 5 entries each
+processing row/group: 6
+getgroup outputing row 6
+6	4	4	7	7
+sum of row/col 6 is:28
+outputing row stats
+program exiting with exit code 0
+rm: cannot remove ‘13182*’: No such file or directory
+
+
+-------Logging For stats pid 13248---------
+2 of command args recieved
+stats are located in test_file
+abreviated flag is -r
+Rows selected
+data has 6 rows with 5 entries each
+processing row/group: {1..6}
+getgroup outputing row {1..6}
+
+sum of row/col {1..6} is:
+outputing row stats
+program exiting with exit code 0
+rm: cannot remove ‘13248*’: No such file or directory
+
+
+-------Logging For stats pid 13275---------
+2 of command args recieved
+stats are located in test_file
+abreviated flag is -r
+Rows selected
+data has 6 rows with 5 entries each
+processing row/group: 1
+getgroup outputing row 1
+1	1	1	1	1
+sum of row/col 1 is:5
+processing row/group: 2
+getgroup outputing row 2
+9	3	4	5	5
+sum of row/col 2 is:26
+processing row/group: 3
+getgroup outputing row 3
+6	7	8	9	7
+sum of row/col 3 is:37
+processing row/group: 4
+getgroup outputing row 4
+3	6	8	9	1
+sum of row/col 4 is:27
+processing row/group: 5
+getgroup outputing row 5
+3	4	2	1	4
+sum of row/col 5 is:14
+processing row/group: 6
+getgroup outputing row 6
+6	4	4	7	7
+sum of row/col 6 is:28
+outputing row stats
+program exiting with exit code 0
+rm: cannot remove ‘13275*’: No such file or directory
+
+
+-------Logging For stats pid 13518---------
+2 of command args recieved
+stats are located in test_file
+abreviated flag is -r
+Rows selected
+data has 6 rows with 5 entries each
+processing row/group: 1
+getgroup outputing row 1
+1	1	1	1	1
+sum of row/col 1 is:5
+average of row/col 1 is:1
+processing row/group: 2
+getgroup outputing row 2
+9	3	4	5	5
+sum of row/col 2 is:26
+average of row/col 2 is:5
+processing row/group: 3
+getgroup outputing row 3
+6	7	8	9	7
+sum of row/col 3 is:37
+average of row/col 3 is:7
+processing row/group: 4
+getgroup outputing row 4
+3	6	8	9	1
+sum of row/col 4 is:27
+average of row/col 4 is:5
+processing row/group: 5
+getgroup outputing row 5
+3	4	2	1	4
+sum of row/col 5 is:14
+average of row/col 5 is:2
+processing row/group: 6
+getgroup outputing row 6
+6	4	4	7	7
+sum of row/col 6 is:28
+average of row/col 6 is:5
+outputing row stats
+program exiting with exit code 0
+removed ‘13518outfile’
+
+
+-------Logging For stats pid 13583---------
+2 of command args recieved
+stats are located in test_file
+abreviated flag is -r
+Rows selected
+data has 6 rows with 5 entries each
+processing row/group: 1
+getgroup outputing row 1
+1	1	1	1	1
+sum of row/col 1 is:5
+average of row/col 1 is:1
+processing row/group: 2
+getgroup outputing row 2
+9	3	4	5	5
+sum of row/col 2 is:26
+average of row/col 2 is:5
+processing row/group: 3
+getgroup outputing row 3
+6	7	8	9	7
+sum of row/col 3 is:37
+average of row/col 3 is:7
+processing row/group: 4
+getgroup outputing row 4
+3	6	8	9	1
+sum of row/col 4 is:27
+average of row/col 4 is:5
+processing row/group: 5
+getgroup outputing row 5
+3	4	2	1	4
+sum of row/col 5 is:14
+average of row/col 5 is:2
+processing row/group: 6
+getgroup outputing row 6
+6	4	4	7	7
+sum of row/col 6 is:28
+average of row/col 6 is:5
+outputing row stats
+program exiting with exit code 0
+removed ‘13583outfile’

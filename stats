@@ -34,6 +34,7 @@ echo -e "\n\n-------Logging For stats pid $$---------" >>$logfile
 
 #VARIABLE DECLARATIONS
 stat_file="$$statfile"
+out_file="$$outfile"
 
 #################Process command args###########################
 
@@ -116,26 +117,61 @@ fi
 
 
 #count cols and rows
+num_fields=$(cat $stat_file | wc -l)
+num_entries=$(head -1 $stat_file | wc -w)
+echo "data has $num_fields rows with $num_entries entries each" >>$logfile
+
+if $collumns ; then
+    temp=$num_fields
+    num_fields=$num_entries
+    num_entries=$temp
+    echo "entries/fields adjusted for collum fields:$num_fields entries:$num_entries" >>$logfile
+fi    
 
 
-nextline=$(getGroup 2)
-echo $nextline
+#########Find mean and median for each field#######
+for ((field=1;field<=$num_fields;field++)); do
 
-for num in $nextline;
-do
-    echo $num
+    echo "processing row/group: $field" >>$logfile
+    
+    group=$(getGroup $field)
+
+    echo "$group" >>$logfile
+
+    ####AVERAGE#####
+    fieldsum=$(echo $group | tr " " "+" | bc)
+    echo "sum of row/col $field is:$fieldsum" >>$logfile
+
+    average=$(expr $fieldsum / $num_entries)
+    echo "average of row/col $field is:$average" >>$logfile
+
+    #TODO  Round up average (including .5)  use expr n%m
+
+    echo $average >>$out_file
+
+    ####MEDIAN######
+    #TODO  find median
+
+    #-n prevents newline
+    echo -n $median >>$out_file
+
+
 done
 
 
-#########Print output################
+#############Print output####################
 
 if $collumns ; then
     #print collumns stats
     echo "outputing collum stats" >>$logfile
+    #for avg/med field
+    #cut -f # $out_file | tr '\n' '\t'
 else
     #print row stats
     echo "outputing row stats" >>$logfile
 fi
 
 
+echo "program exiting without error" >>$logfile
+#exiting program succesfully
 cleanExit 0
