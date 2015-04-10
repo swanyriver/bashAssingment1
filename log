@@ -177,3 +177,73 @@ abreviated flag is -g
 2 of command args recieved
 stats are located in test_file
 abreviated flag is -g
+
+
+-------Logging For stats pid 9300---------
+2 of command args recieved
+stats are located in test_file
+abreviated flag is -c
+collumns selected
+outputing collum stats
+
+
+-------Logging For stats pid 9301---------
+2 of command args recieved
+stats are located in test_file
+abreviated flag is -r
+Rows selected
+outputing row stats
+
+
+-------Logging For stats pid 9302---------
+2 of command args recieved
+stats are located in test_file
+abreviated flag is -j
+log test
+
+
+-------Logging For stats pid 9643---------
+2 of command args recieved
+stats are located in test_file
+abreviated flag is -j
+outputing collum stats
+
+
+-------Logging For stats pid 9647---------
+2 of command args recieved
+stats are located in test_file
+abreviated flag is -j
+program exiting with exit code 1
+
+
+-------Logging For stats pid 9649---------
+2 of command args recieved
+stats are located in test_file
+abreviated flag is -j
+program exiting with exit code 1
+
+
+-------Logging For stats pid 9660---------
+2 of command args recieved
+stats are located in test_file
+abreviated flag is -j
+program exiting with exit code 1
+rm: cannot remove ‘9660*’: No such file or directory
+
+
+-------Logging For stats pid 9673---------
+1 of command args recieved
+recieving input from STDIN
+abreviated flag is -c
+collumns selected
+outputing collum stats
+program exiting with exit code 0
+removed ‘9673statfile’
+
+
+-------Logging For stats pid 9679---------
+1 of command args recieved
+recieving input from STDIN
+abreviated flag is -j
+program exiting with exit code 1
+removed ‘9679statfile’

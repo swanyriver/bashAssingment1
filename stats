@@ -1,6 +1,17 @@
 #!/bin/bash
 
-#Set trap to exit gracefully on error
+####Clean up and cleanExit function###Recieves cleanExit code##
+function cleanExit {
+    
+    echo "program exiting with exit code $1" >>$logfile
+
+    #change to -f before submiting  TODO
+    rm -I -v $$* >>$logfile 2>>$logfile
+    exit $1
+}
+
+
+#Set trap to cleanExit gracefully on error
 
 
 ############TO ACOMODATE TRACE STATEMENTS#########################
@@ -25,7 +36,7 @@ echo "$# of command args recieved" >>$logfile
 if [[ ! ( "$#" == 1 || "$#" == "2" ) ]] ; then
 
     echo "incorect num arguments recieved" >&2
-    exit 1
+    cleanExit 1
 fi
 
 
@@ -37,7 +48,7 @@ if [[ "$#" == "2" ]] ; then
     #check file is present and readable
     if [ ! -r "$stat_file" ] ; then
         echo "File is unreadable or does not exist" >&2
-        exit 1
+        cleanExit 1
     fi
 
 
@@ -58,8 +69,8 @@ else
     	done
     else
         #no file specified but no data available in stderr
-    	echo "no file specified and no input available, Exiting now" >&2
-        exit 1
+    	echo "No file specified and no input available, Exiting now" >&2
+        cleanExit 1
     fi
 
 fi
@@ -82,8 +93,8 @@ elif [[ "${1:0:2}" == "-c"  ]]; then
 
     #set Getline to return collumns
 else
-    echo "incorect selector flag, exiting now" >&2
-    exit 1
+    echo "Incorect selector flag, Exiting now" >&2
+    cleanExit 1
 fi
 
 ####Stats program started successfully, proper args and readable file###
@@ -104,4 +115,4 @@ else
     echo "outputing row stats" >>$logfile
 fi
 
-exit 0
+cleanExit 0
