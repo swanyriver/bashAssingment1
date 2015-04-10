@@ -9,13 +9,13 @@
 #used in conjuction with tail -f logfile for live logging
 #I would have used an argument such as -l followed by filename but I wanted to preserve the
 #argument handling to just those specified by the assignment
-if [ -z "$logfile" ]; then
+if [ -z "$logfile" ] ; then
 	logfile=/dev/null
 fi
 echo -e "\n\n-------Logging For stats pid $$---------" >>$logfile
 
 #VARIABLE DECLARATIONS
-collumns=0
+collumns=true
 stat_file="$$statfile"
 
 #################Process command args###########################
@@ -23,7 +23,7 @@ stat_file="$$statfile"
 ##check number
 echo "$# of command args recieved" >>$logfile
 
-if [[ ! ( "$#" == 1 || "$#" == "2" ) ]]; then
+if [[ ! ( "$#" == 1 || "$#" == "2" ) ]] ; then
 
     echo "incorect num arguments recieved" >&2
     exit 1
@@ -31,18 +31,33 @@ fi
 
 
 ############error check and record -r/-c########
-###TODO
-###check that it is -r/-c
+###check that it is -r || -c
 ###assign collumns accordingly
+echo "abreviated flag is ${1:0:1}" >>$logfile
+if [[ "${1:0:1}" == "-r" ]]; then
+
+    echo "Rows selected" >>$logfile
+    $collumns=false
+    
+    #set Getline to return rows
+    
+elif [[ "${1:0:1}" == "-r"  ]]; then
+
+    echo "collumns selected" >>$logfile
+    $collumns=true
+    
+    #set Getline to return collumns
+    
+
 
 
 ############error check and record filename######
-if [[ "$#" == "2" ]]; then
+if [[ "$#" == "2" ]] ; then
     stat_file=$2
     echo "stats are located in $stat_file" >>$logfile
 
     #check file is present and readable
-    if [ ! -r "$stat_file" ]; then
+    if [ ! -r "$stat_file" ] ; then
         echo "File is unreadable or does not exist" >&2
         exit 1
     fi
@@ -51,8 +66,8 @@ if [[ "$#" == "2" ]]; then
 
 else
     #detect std in
-    if [ ! -t 0 ]; then
-    	echo "running interactivelly" >>$logfile
+    if [ ! -t 0 ] ; then
+    	echo "recieving input from STDIN" >>$logfile
 
         #DUMP CONTENTS OF STDIN TO FILE
 
@@ -74,7 +89,15 @@ fi
 
 ####Stats program started successfully, proper args and readable file###
 
-#rotate if collumn requested
+#########Define GetLine() row or col version##########
+
+if [[ "$collumns" == "true" ]] ; then
+    #get collumns
+    echo "defining collumns GetLine function" >>$logfile
+else
+    #get collumns
+    echo "defining rows GetLine function" >>$logfile
+fi
 
 #count items per row
 
