@@ -96,7 +96,7 @@ fi
 
 #########Print output################
 
-if [[ "$collumns" == "true" ]] ; then
+if $collumns ; then
     #print collumns stats
     echo "outputing collum stats" >>$logfile
 else
