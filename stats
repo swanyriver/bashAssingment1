@@ -78,33 +78,53 @@ else
 
 fi
 
-############error check and record -r/-c########
+############error check and record -r/-c###################################
 ###check that it is -r || -c
-###assign collumns accordingly
+###assign collumns accordingly and getGroup acordingly
+### use getgroup with command subtition to store result, $1 is row/col num
+### nextLine=$(getGroup n)
+###########################################################################
 echo "abreviated flag is ${1:0:2}" >>$logfile
 if [[ "${1:0:2}" == "-r" ]]; then
 
     echo "Rows selected" >>$logfile
     collumns=false
     
-    #set Getline to return rows
+    #set getGroup to return rows
+    function getGroup {
+        echo "getgroup outputing row $1" >>$logfile
+        head "-$1" $stat_file | tail -1
+    }
     
 elif [[ "${1:0:2}" == "-c"  ]]; then
 
     echo "collumns selected" >>$logfile
     collumns=true
 
-    #set Getline to return collumns
+    #set getGroup to return collumns
+    function getGroup {
+        echo "getgroup outputing collumn $1" >>$logfile
+        cut -f $1 $stat_file | tr '\n' '\t'      
+    }
 else
     cleanExit 1 "Incorect selector flag, Exiting now"
 fi
 
+########################################################################
 ####Stats program started successfully, proper args and readable file###
+########################################################################
 
 
+#count cols and rows
 
-#count items per row
 
+nextline=$(getGroup 2)
+echo $nextline
+
+for num in $nextline;
+do
+    echo $num
+done
 
 
 #########Print output################
@@ -116,9 +136,6 @@ else
     #print row stats
     echo "outputing row stats" >>$logfile
 fi
-
-
-read myline
 
 
 cleanExit 0

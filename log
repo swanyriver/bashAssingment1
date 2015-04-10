@@ -354,3 +354,167 @@ outputing collum stats
 program exiting with exit code 1
 rm: cannot remove ‘10067*’: No such file or directory
 Error Message: process interupted
+
+
+-------Logging For stats pid 12280---------
+2 of command args recieved
+stats are located in ../experiment/alpha
+abreviated flag is -c
+
+
+-------Logging For stats pid 12281---------
+2 of command args recieved
+stats are located in ../experiment/alpha
+abreviated flag is -c
+collumns selected
+program exiting with exit code 1
+removed ‘12281col’
+Error Message: process interupted
+
+
+-------Logging For stats pid 12291---------
+2 of command args recieved
+stats are located in ../experiment/alpha
+abreviated flag is -c
+collumns selected
+program exiting with exit code 1
+removed ‘12291col’
+Error Message: process interupted
+
+
+-------Logging For stats pid 12299---------
+2 of command args recieved
+stats are located in ../experiment/alpha
+abreviated flag is -c
+collumns selected
+collumn 2
+program exiting with exit code 1
+removed ‘12299col’
+Error Message: process interupted
+
+
+-------Logging For stats pid 12307---------
+2 of command args recieved
+stats are located in ../experiment/alpha
+abreviated flag is -c
+collumns selected
+collumn 2
+outputing collum stats
+program exiting with exit code 0
+rm: cannot remove ‘12307*’: No such file or directory
+
+
+-------Logging For stats pid 12319---------
+2 of command args recieved
+stats are located in ../experiment/alpha
+abreviated flag is -c
+collumns selected
+collumn 2
+outputing collum stats
+program exiting with exit code 0
+rm: cannot remove ‘12319*’: No such file or directory
+
+
+-------Logging For stats pid 12324---------
+2 of command args recieved
+stats are located in ../experiment/alpha
+abreviated flag is -c
+collumns selected
+collumn 2
+outputing collum stats
+program exiting with exit code 0
+rm: cannot remove ‘12324*’: No such file or directory
+
+
+-------Logging For stats pid 12328---------
+2 of command args recieved
+stats are located in ../experiment/alpha
+abreviated flag is -c
+collumns selected
+collumn 2
+a b c d
+e f g h
+i j k l
+outputing collum stats
+program exiting with exit code 0
+removed ‘12328col’
+
+
+-------Logging For stats pid 12345---------
+2 of command args recieved
+stats are located in ../experiment/alpha
+abreviated flag is -c
+collumns selected
+collumn 2
+b
+f
+j
+outputing collum stats
+program exiting with exit code 0
+rm: cannot remove ‘12345*’: No such file or directory
+
+
+-------Logging For stats pid 12352---------
+2 of command args recieved
+stats are located in ../experiment/alpha
+abreviated flag is -c
+collumns selected
+collumn 2
+outputing collum stats
+program exiting with exit code 0
+rm: cannot remove ‘12352*’: No such file or directory
+
+
+-------Logging For stats pid 12377---------
+2 of command args recieved
+stats are located in test_file
+abreviated flag is -c
+collumns selected
+collumn 2
+outputing collum stats
+program exiting with exit code 0
+rm: cannot remove ‘12377*’: No such file or directory
+
+
+-------Logging For stats pid 12394---------
+2 of command args recieved
+stats are located in test_file
+abreviated flag is -c
+collumns selected
+getgroup outputing collumn 2
+outputing collum stats
+program exiting with exit code 0
+rm: cannot remove ‘12394*’: No such file or directory
+
+
+-------Logging For stats pid 12401---------
+2 of command args recieved
+stats are located in test_file
+abreviated flag is -r
+Rows selected
+getgroup outputing row 2
+outputing row stats
+program exiting with exit code 0
+rm: cannot remove ‘12401*’: No such file or directory
+
+
+-------Logging For stats pid 12449---------
+2 of command args recieved
+stats are located in test_file
+abreviated flag is -r
+Rows selected
+getgroup outputing row 2
+outputing row stats
+program exiting with exit code 0
+rm: cannot remove ‘12449*’: No such file or directory
+
+
+-------Logging For stats pid 12455---------
+2 of command args recieved
+stats are located in test_file
+abreviated flag is -c
+collumns selected
+getgroup outputing collumn 2
+outputing collum stats
+program exiting with exit code 0
+rm: cannot remove ‘12455*’: No such file or directory
