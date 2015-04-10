@@ -6,22 +6,30 @@
 ############TO ACOMODATE TRACE STATEMENTS#########################
 #export a file path to $logfile before runing script to capture 
 #a log of trace statements, otherwise they are directed to /dev/null
+#used in conjuction with tail -f logfile for live logging
 #I would have used an argument such as -l followed by filename but I wanted to preserve the
 #argument handling to just those specified by the assignment
 if [ -z "$logfile" ]; then
 	logfile=/dev/null
 fi
-#echo "sample log statement" >$logfile
+echo -e "\n\n-------Logging For stats pid $$---------" >>$logfile
 
-#variable declarations
+#VARIABLE DECLARATIONS
 collumns=0
 stat_file="$$statfile"
 
-#Process command args
+#################Process command args###########################
+
+##check number
+echo "$# of command args recieved" >>$logfile
+
+
 
 #detect std in
 if [ ! -t 0 ]; then
-	echo "running interactivelly"
+	echo "running interactivelly" >>$logfile
+
+    #DUMP CONTENTS OF STDIN TO FILE
 
 	#create a new empty file
 	cp /dev/null $stat_file
@@ -31,9 +39,16 @@ if [ ! -t 0 ]; then
 		echo $inputLine >> $stat_file
 	done
 else
-	echo "reading file"
+    #no file specified but no data available in stderr
+	echo "no file specified and no input available, Exiting now">2
+    exit 1
+
 fi
 
+#check file is readable
+
+
+####Stats program started successfully, proper args and readable file###
 
 #rotate if collumn requested
 
