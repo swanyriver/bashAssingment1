@@ -247,3 +247,110 @@ recieving input from STDIN
 abreviated flag is -j
 program exiting with exit code 1
 removed ‘9679statfile’
+
+
+-------Logging For stats pid 9752---------
+2 of command args recieved
+stats are located in booger
+program exiting with exit code 1
+rm: cannot remove ‘9752*’: No such file or directory
+
+
+-------Logging For stats pid 9760---------
+2 of command args recieved
+stats are located in booger
+program exiting with exit code 1
+rm: cannot remove ‘9760*’: No such file or directory
+
+
+-------Logging For stats pid 9767---------
+2 of command args recieved
+stats are located in booger
+program exiting with exit code 1
+rm: cannot remove ‘9767*’: No such file or directory
+
+
+-------Logging For stats pid 9771---------
+2 of command args recieved
+stats are located in booger
+program exiting with exit code 1
+rm: cannot remove ‘9771*’: No such file or directory
+
+
+-------Logging For stats pid 9785---------
+2 of command args recieved
+stats are located in booger
+program exiting with exit code 1 File is unreadable or does not exist
+rm: cannot remove ‘9785*’: No such file or directory
+
+
+-------Logging For stats pid 9796---------
+2 of command args recieved
+stats are located in booger
+program exiting with exit code 1
+rm: cannot remove ‘9796*’: No such file or directory
+
+
+-------Logging For stats pid 9801---------
+2 of command args recieved
+stats are located in booger
+program exiting with exit code 1
+rm: cannot remove ‘9801*’: No such file or directory
+Error Message: File is unreadable or does not exist
+
+
+-------Logging For stats pid 9803---------
+2 of command args recieved
+stats are located in booger
+program exiting with exit code 1
+rm: cannot remove ‘9803*’: No such file or directory
+Error Message: File is unreadable or does not exist
+
+
+-------Logging For stats pid 9806---------
+1 of command args recieved
+program exiting with exit code 1
+rm: cannot remove ‘9806*’: No such file or directory
+Error Message: No file specified and no input available
+
+
+-------Logging For stats pid 9808---------
+0 of command args recieved
+program exiting with exit code 1
+rm: cannot remove ‘9808*’: No such file or directory
+Error Message: incorect num arguments recieved
+
+
+-------Logging For stats pid 9816---------
+0 of command args recieved
+program exiting with exit code 1
+rm: cannot remove ‘9816*’: No such file or directory
+Error Message: Incorect number of arguments recieved\nuse format stats {-rows|-cols} [input_file]
+
+
+-------Logging For stats pid 9818---------
+0 of command args recieved
+program exiting with exit code 1
+rm: cannot remove ‘9818*’: No such file or directory
+Error Message: Incorect number of arguments recieved\nuse format: stats {-rows|-cols} [input_file]
+
+
+-------Logging For stats pid 9823---------
+2 of command args recieved
+stats are located in test_file
+abreviated flag is -c
+collumns selected
+outputing collum stats
+program exiting with exit code 0
+rm: cannot remove ‘9823*’: No such file or directory
+
+
+-------Logging For stats pid 10067---------
+2 of command args recieved
+stats are located in test_file
+abreviated flag is -c
+collumns selected
+outputing collum stats
+program exiting with exit code 1
+rm: cannot remove ‘10067*’: No such file or directory
+Error Message: process interupted

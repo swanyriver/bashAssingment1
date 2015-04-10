@@ -7,11 +7,18 @@ function cleanExit {
 
     #change to -f before submiting  TODO
     rm -I -v $$* >>$logfile 2>>$logfile
+
+    if [[ ! "$1" == 0 ]]; then
+        echo "Error Message: $2" >>$logfile
+        echo -e "$2 \nExiting stats program now" >&2
+    fi
+
     exit $1
 }
 
 
-#Set trap to cleanExit gracefully on error
+#Set trap to exit gracefully on error
+trap "cleanExit 1 \"process interupted\"" INT HUP TERM
 
 
 ############TO ACOMODATE TRACE STATEMENTS#########################
@@ -33,10 +40,8 @@ stat_file="$$statfile"
 ##check number
 echo "$# of command args recieved" >>$logfile
 
-if [[ ! ( "$#" == 1 || "$#" == "2" ) ]] ; then
-
-    echo "incorect num arguments recieved" >&2
-    cleanExit 1
+if [[ ! ( "$#" == 1 || "$#" == "2" ) ]] ; then 
+    cleanExit 1 "Incorect number of arguments recieved\nuse format: stats {-rows|-cols} [input_file]"
 fi
 
 
@@ -47,8 +52,7 @@ if [[ "$#" == "2" ]] ; then
 
     #check file is present and readable
     if [ ! -r "$stat_file" ] ; then
-        echo "File is unreadable or does not exist" >&2
-        cleanExit 1
+        cleanExit 1 "File is unreadable or does not exist"
     fi
 
 
@@ -69,8 +73,7 @@ else
     	done
     else
         #no file specified but no data available in stderr
-    	echo "No file specified and no input available, Exiting now" >&2
-        cleanExit 1
+        cleanExit 1 "No file specified and no input available"
     fi
 
 fi
@@ -93,8 +96,7 @@ elif [[ "${1:0:2}" == "-c"  ]]; then
 
     #set Getline to return collumns
 else
-    echo "Incorect selector flag, Exiting now" >&2
-    cleanExit 1
+    cleanExit 1 "Incorect selector flag, Exiting now"
 fi
 
 ####Stats program started successfully, proper args and readable file###
@@ -114,5 +116,9 @@ else
     #print row stats
     echo "outputing row stats" >>$logfile
 fi
+
+
+read myline
+
 
 cleanExit 0
