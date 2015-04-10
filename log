@@ -70,3 +70,110 @@ defining rows GetLine function
 2 of command args recieved
 stats are located in test_file
 defining collumns GetLine function
+
+
+-------Logging For stats pid 8578---------
+2 of command args recieved
+stats are located in test_file
+abreviated flag is -
+outputing collum stats
+
+
+-------Logging For stats pid 8579---------
+2 of command args recieved
+stats are located in test_file
+abreviated flag is -c
+outputing collum stats
+
+
+-------Logging For stats pid 8580---------
+2 of command args recieved
+stats are located in test_file
+abreviated flag is -c
+collumns selected
+outputing collum stats
+
+
+-------Logging For stats pid 8583---------
+2 of command args recieved
+stats are located in test_file
+abreviated flag is -r
+Rows selected
+outputing collum stats
+
+
+-------Logging For stats pid 8591---------
+2 of command args recieved
+stats are located in test_file
+abreviated flag is -r
+Rows selected
+outputing row stats
+
+
+-------Logging For stats pid 8592---------
+2 of command args recieved
+stats are located in test_file
+abreviated flag is -c
+collumns selected
+outputing collum stats
+
+
+-------Logging For stats pid 8599---------
+2 of command args recieved
+stats are located in test_file
+abreviated flag is -c
+collumns selected
+outputing collum stats
+
+
+-------Logging For stats pid 8600---------
+2 of command args recieved
+stats are located in test_file
+abreviated flag is -g
+outputing row stats
+
+
+-------Logging For stats pid 8606---------
+2 of command args recieved
+stats are located in test_file
+abreviated flag is -g
+outputing row stats
+
+
+-------Logging For stats pid 8621---------
+2 of command args recieved
+stats are located in test_file
+abreviated flag is -c
+collumns selected
+outputing collum stats
+
+
+-------Logging For stats pid 8623---------
+2 of command args recieved
+stats are located in test_file
+abreviated flag is -c
+collumns selected
+outputing collum stats
+
+
+-------Logging For stats pid 8625---------
+2 of command args recieved
+stats are located in test_file
+abreviated flag is -g
+outputing row stats
+
+
+-------Logging For stats pid 8626---------
+2 of command args recieved
+stats are located in test_file
+abreviated flag is -g
+
+
+-------Logging For stats pid 8632---------
+1 of command args recieved
+
+
+-------Logging For stats pid 8636---------
+2 of command args recieved
+stats are located in test_file
+abreviated flag is -g

@@ -15,7 +15,6 @@ fi
 echo -e "\n\n-------Logging For stats pid $$---------" >>$logfile
 
 #VARIABLE DECLARATIONS
-collumns=true
 stat_file="$$statfile"
 
 #################Process command args###########################
@@ -28,27 +27,6 @@ if [[ ! ( "$#" == 1 || "$#" == "2" ) ]] ; then
     echo "incorect num arguments recieved" >&2
     exit 1
 fi
-
-
-############error check and record -r/-c########
-###check that it is -r || -c
-###assign collumns accordingly
-echo "abreviated flag is ${1:0:1}" >>$logfile
-if [[ "${1:0:1}" == "-r" ]]; then
-
-    echo "Rows selected" >>$logfile
-    $collumns=false
-    
-    #set Getline to return rows
-    
-elif [[ "${1:0:1}" == "-r"  ]]; then
-
-    echo "collumns selected" >>$logfile
-    $collumns=true
-    
-    #set Getline to return collumns
-    
-
 
 
 ############error check and record filename######
@@ -80,26 +58,50 @@ else
     	done
     else
         #no file specified but no data available in stderr
-    	echo "no file specified and no input available, Exiting now">&2
+    	echo "no file specified and no input available, Exiting now" >&2
         exit 1
     fi
 
 fi
 
+############error check and record -r/-c########
+###check that it is -r || -c
+###assign collumns accordingly
+echo "abreviated flag is ${1:0:2}" >>$logfile
+if [[ "${1:0:2}" == "-r" ]]; then
+
+    echo "Rows selected" >>$logfile
+    collumns=false
+    
+    #set Getline to return rows
+    
+elif [[ "${1:0:2}" == "-c"  ]]; then
+
+    echo "collumns selected" >>$logfile
+    collumns=true
+
+    #set Getline to return collumns
+else
+    echo "incorect selector flag, exiting now" >&2
+    exit 1
+fi
 
 ####Stats program started successfully, proper args and readable file###
 
-#########Define GetLine() row or col version##########
 
-if [[ "$collumns" == "true" ]] ; then
-    #get collumns
-    echo "defining collumns GetLine function" >>$logfile
-else
-    #get collumns
-    echo "defining rows GetLine function" >>$logfile
-fi
 
 #count items per row
 
+
+
+#########Print output################
+
+if [[ "$collumns" == "true" ]] ; then
+    #print collumns stats
+    echo "outputing collum stats" >>$logfile
+else
+    #print row stats
+    echo "outputing row stats" >>$logfile
+fi
 
 exit 0
