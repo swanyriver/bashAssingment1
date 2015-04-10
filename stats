@@ -1,5 +1,8 @@
 #!/bin/bash
 
+#Set trap to exit gracefully on error
+
+
 ############TO ACOMODATE TRACE STATEMENTS#########################
 #export a file path to $logfile before runing script to capture 
 #a log of trace statements, otherwise they are directed to /dev/null
@@ -10,13 +13,28 @@ if [ -z "$logfile" ]; then
 fi
 #echo "sample log statement" >$logfile
 
+#variable declarations
+collumns=0
+stat_file="$$statfile"
+
+#Process command args
 
 #detect std in
 if [ ! -t 0 ]; then
 	echo "running interactivelly"
-	read myline
-	echo $myline
+
+	#create a new empty file
+	cp /dev/null $stat_file
+
+	while read inputLine
+	do
+		echo $inputLine >> $stat_file
+	done
 else
 	echo "reading file"
 fi
-	
+
+
+#rotate if collumn requested
+
+#count items per row
