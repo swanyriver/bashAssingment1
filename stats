@@ -23,6 +23,11 @@ stat_file="$$statfile"
 ##check number
 echo "$# of command args recieved" >>$logfile
 
+#if [ "$#" != "1" && "$#" != "2" ]; then
+if [[ ! ( "$#" == 1 || "$#" == "2" ) ]]; then
+
+    echo "incorect num arguments"
+fi
 
 
 #detect std in
@@ -40,7 +45,7 @@ if [ ! -t 0 ]; then
 	done
 else
     #no file specified but no data available in stderr
-	echo "no file specified and no input available, Exiting now">2
+	echo "no file specified and no input available, Exiting now">&2
     exit 1
 
 fi
