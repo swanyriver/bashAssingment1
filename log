@@ -1601,3 +1601,107 @@ outputing collum stats
 calling cleanup with succesfull exit code
 program exiting with exit code 0
 removed ‘16386outfile’
+
+
+-------Logging For stats pid 16944---------
+2 of command args recieved
+stats are located in test_file
+abreviated flag is -r
+Rows selected
+data has 6 rows with 5 entries each
+processing row/group: 1
+getgroup outputing row 1
+1	1	1	1	1
+sum of row/col 1 is:5
+average of row/col 1 is:1
+median of row/col 1 is:1
+processing row/group: 2
+getgroup outputing row 2
+9	3	4	5	5
+sum of row/col 2 is:26
+average of row/col 2 is:5
+median of row/col 2 is:5
+processing row/group: 3
+getgroup outputing row 3
+6	7	8	9	7
+sum of row/col 3 is:37
+average of row/col 3 is:7
+median of row/col 3 is:7
+processing row/group: 4
+getgroup outputing row 4
+3	6	8	9	1
+sum of row/col 4 is:27
+average of row/col 4 is:5
+median of row/col 4 is:6
+processing row/group: 5
+getgroup outputing row 5
+3	4	2	1	4
+sum of row/col 5 is:14
+average of row/col 5 is:2
+median of row/col 5 is:3
+processing row/group: 6
+getgroup outputing row 6
+6	4	4	7	7
+sum of row/col 6 is:28
+average of row/col 6 is:5
+median of row/col 6 is:6
+Result file:
+1	1
+5	5
+7	7
+5	6
+3	3
+6	6
+outputing row stats
+calling cleanup with succesfull exit code
+program exiting with exit code 0
+removed ‘16944outfile’
+
+
+-------Logging For stats pid 17166---------
+2 of command args recieved
+stats are located in test_file
+abreviated flag is -c
+collumns selected
+data has 6 rows with 5 entries each
+entries/fields adjusted for collum fields:5 entries:6
+processing row/group: 1
+getgroup outputing collumn 1
+1	9	6	3	3	6	
+sum of row/col 1 is:28
+average of row/col 1 is:4
+median of row/col 1 is:6
+processing row/group: 2
+getgroup outputing collumn 2
+1	3	7	6	4	4	
+sum of row/col 2 is:25
+average of row/col 2 is:4
+median of row/col 2 is:4
+processing row/group: 3
+getgroup outputing collumn 3
+1	4	8	8	2	4	
+sum of row/col 3 is:27
+average of row/col 3 is:4
+median of row/col 3 is:4
+processing row/group: 4
+getgroup outputing collumn 4
+1	5	9	9	1	7	
+sum of row/col 4 is:32
+average of row/col 4 is:5
+median of row/col 4 is:7
+processing row/group: 5
+getgroup outputing collumn 5
+1	5	7	1	4	7	
+sum of row/col 5 is:25
+average of row/col 5 is:4
+median of row/col 5 is:5
+Result file:
+5	6
+4	4
+5	4
+5	7
+4	5
+outputing collum stats
+calling cleanup with succesfull exit code
+program exiting with exit code 0
+removed ‘17166outfile’
