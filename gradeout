@@ -3,12 +3,12 @@ Creating file1 file2 file3 file4 file5
 
 
 total 28
--rw-rw-r-- 1 brandon brandon  259 Apr 11 10:57 file1
--rw-rw-r-- 1 brandon brandon   49 Apr 11 10:57 file2
--rw-rw-r-- 1 brandon brandon    3 Apr 11 10:57 file3
--rw-rw-r-- 1 brandon brandon    0 Apr 11 10:57 file4
--rw-rw-r-- 1 brandon brandon 5831 Apr 11 10:57 file5
--rwxrwxr-x 1 brandon brandon 5228 Apr 11 10:57 stats
+-rw-rw-r-- 1 brandon brandon  259 Apr 11 13:31 file1
+-rw-rw-r-- 1 brandon brandon   49 Apr 11 13:31 file2
+-rw-rw-r-- 1 brandon brandon    3 Apr 11 13:31 file3
+-rw-rw-r-- 1 brandon brandon    0 Apr 11 13:31 file4
+-rw-rw-r-- 1 brandon brandon 5831 Apr 11 13:31 file5
+-rwxrwxr-x 1 brandon brandon 5424 Apr 11 13:31 stats
 
 
 --------------------------------------------------------------------------
@@ -141,9 +141,9 @@ Error Message:
 
 Standard Input on Cols: 3 points for exit value 0
 Averages:
-349	349	349	349	
+85	86	83	96	
 Medians:
-73	73	73	73	
+95	94	93	99	
 Exit Value: 0
 Error Message:
 
@@ -302,8 +302,8 @@ Trap Signals
 
 
 Before Kill
-22100outfile
-22100statfile
+30000outfile
+30000statfile
 file1
 file2
 file3
@@ -312,10 +312,10 @@ file5
 stats
 
   PID TTY          TIME CMD
+  488 pts/0    00:00:00 ps
  5196 pts/0    00:00:00 bash
-19126 pts/0    00:00:00 p1gradingscript
-22100 pts/0    00:00:00 stats
-25136 pts/0    00:00:00 ps
+26951 pts/0    00:00:00 p1gradingscript
+30000 pts/0    00:00:00 stats
 
 
 After Kill: 8 points if no temp files
@@ -327,8 +327,8 @@ file5
 stats
 
   PID TTY          TIME CMD
+  515 pts/0    00:00:00 ps
  5196 pts/0    00:00:00 bash
-19126 pts/0    00:00:00 p1gradingscript
-25160 pts/0    00:00:00 ps
+26951 pts/0    00:00:00 p1gradingscript
 
 

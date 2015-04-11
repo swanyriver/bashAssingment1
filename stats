@@ -71,8 +71,12 @@ else
 
     	while read inputLine
     	do
-    		echo $inputLine >> $stat_file
+            #tr is necesarry because the tabs are lost using read, and are necesary for cut -f
+    		echo $inputLine | tr ' ' '\t' >> $stat_file
     	done
+
+        echo "captured input from STDIN" >>$logfile
+        cat $stat_file >>$logfile
     else
         #no file specified but no data available in stderr
         cleanExit 1 "No file specified and no input available"
