@@ -3,12 +3,12 @@ Creating file1 file2 file3 file4 file5
 
 
 total 28
--rw-rw-r-- 1 brandon brandon  259 Apr 10 18:20 file1
--rw-rw-r-- 1 brandon brandon   49 Apr 10 18:20 file2
--rw-rw-r-- 1 brandon brandon    3 Apr 10 18:20 file3
--rw-rw-r-- 1 brandon brandon    0 Apr 10 18:20 file4
--rw-rw-r-- 1 brandon brandon 5831 Apr 10 18:20 file5
--rwxrwxr-x 1 brandon brandon 5193 Apr 10 18:20 stats
+-rw-rw-r-- 1 brandon brandon  259 Apr 11 10:52 file1
+-rw-rw-r-- 1 brandon brandon   49 Apr 11 10:52 file2
+-rw-rw-r-- 1 brandon brandon    3 Apr 11 10:52 file3
+-rw-rw-r-- 1 brandon brandon    0 Apr 11 10:52 file4
+-rw-rw-r-- 1 brandon brandon 5831 Apr 11 10:52 file5
+-rwxrwxr-x 1 brandon brandon 5225 Apr 11 10:52 stats
 
 
 --------------------------------------------------------------------------
@@ -202,13 +202,15 @@ Exiting stats program now
 Wrong Format: 1 point for usage text, 2 points for exit value 1
 Exit Value: 1
 Error Message:
-Incorect selector flag, Exiting now 
+Incorect selector flag, 
+use format: stats {-rows|-cols} [input_file] 
 Exiting stats program now
 
 Bad Option: 1 point for usage text, 2 points for exit value 1
 Exit Value: 1
 Error Message:
-Incorect selector flag, Exiting now 
+Incorect selector flag, 
+use format: stats {-rows|-cols} [input_file] 
 Exiting stats program now
 
 
@@ -300,8 +302,8 @@ Trap Signals
 
 
 Before Kill
-18917outfile
-18917statfile
+16036outfile
+16036statfile
 file1
 file2
 file3
@@ -310,10 +312,10 @@ file5
 stats
 
   PID TTY          TIME CMD
-14296 pts/20   00:00:00 bash
-15786 pts/20   00:00:00 p1gradingscript
-18917 pts/20   00:00:00 stats
-21972 pts/20   00:00:00 ps
+ 5196 pts/0    00:00:00 bash
+13057 pts/0    00:00:00 p1gradingscript
+16036 pts/0    00:00:00 stats
+19027 pts/0    00:00:00 ps
 
 
 After Kill: 8 points if no temp files
@@ -325,8 +327,8 @@ file5
 stats
 
   PID TTY          TIME CMD
-14296 pts/20   00:00:00 bash
-15786 pts/20   00:00:00 p1gradingscript
-21997 pts/20   00:00:00 ps
+ 5196 pts/0    00:00:00 bash
+13057 pts/0    00:00:00 p1gradingscript
+19054 pts/0    00:00:00 ps
 
 

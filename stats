@@ -35,6 +35,7 @@ echo -e "\n\n-------Logging For stats pid $$---------" >>$logfile
 #VARIABLE DECLARATIONS
 stat_file="$$statfile"
 out_file="$$outfile"
+Usage_Text="stats {-rows|-cols} [input_file]"
 
 #################Process command args###########################
 
@@ -42,7 +43,7 @@ out_file="$$outfile"
 echo "$# of command args recieved" >>$logfile
 
 if [[ ! ( "$#" == 1 || "$#" == "2" ) ]] ; then 
-    cleanExit 1 "Incorect number of arguments recieved\nuse format: stats {-rows|-cols} [input_file]"
+    cleanExit 1 "Incorect number of arguments recieved\nuse format: $Usage_Text"
 fi
 
 
@@ -108,7 +109,7 @@ elif [[ "${1:0:2}" == "-c"  ]]; then
         cut -f $1 $stat_file | tr '\n' '\t'      
     }
 else
-    cleanExit 1 "Incorect selector flag, \nuse format: stats {-rows|-cols} [input_file]"
+    cleanExit 1 "Incorect selector flag, \nuse format: $Usage_Text"
 fi
 
 ########################################################################
@@ -156,7 +157,7 @@ for ((field=1;field<=$num_fields;field++)); do
 
     ####MEDIAN######
     #TODO multiline the pipes
-    median=$(echo $group | tr ' ' '\n' | sort | head -$(expr $num_entries / 2  + 1) | tail -$(expr 2 - $num_entries % 2) | sort | tail -1)
+    median=$(echo $group | tr ' ' '\n' | sort | head -$(expr $num_entries / 2  + 1) | tail -$(expr 2 - $num_entries % 2) | tail -1)
     echo "median of row/col $field is:$median" >>$logfile
 
     echo -e "\t$median" >>$out_file

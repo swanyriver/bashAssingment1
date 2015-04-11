@@ -1,6 +1,13 @@
 #!/bin/bash
 
-num_entries=$(cat $1 | wc -w)
+line=$(head -$1 file2 | tail -1) 
+
+echo $line
+
+num_entries=$(echo $line | wc -w)
 echo " entries $num_entries"
 
-cat $1 | tr '\t' '\n' | sort | head -$(expr $num_entries / 2  + 1) | tail -$(expr 2 - $num_entries % 2) | sort | tail -1
+
+#cat $1 | tr '\t' '\n' | sort | head -$(expr $num_entries / 2  + 1) | tail -$(expr 2 - $num_entries % 2) | sort | tail -1
+
+echo $line | tr ' ' '\n' | sort #| head -$(expr $num_entries / 2  + 1) | tail -$(expr 2 - $num_entries % 2) #| head -1
