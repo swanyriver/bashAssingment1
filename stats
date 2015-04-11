@@ -108,7 +108,7 @@ elif [[ "${1:0:2}" == "-c"  ]]; then
         cut -f $1 $stat_file | tr '\n' '\t'      
     }
 else
-    cleanExit 1 "Incorect selector flag, Exiting now"
+    cleanExit 1 "Incorect selector flag, \nuse format: stats {-rows|-cols} [input_file]"
 fi
 
 ########################################################################
