@@ -1,0 +1,174 @@
+5,11c5,11
+< total 40
+< -rw-rw----. 1 brewsteb upg57541  259 Mar 17 22:12 file1
+< -rw-rw----. 1 brewsteb upg57541   49 Mar 17 22:12 file2
+< -rw-rw----. 1 brewsteb upg57541    3 Mar 17 22:12 file3
+< -rw-rw----. 1 brewsteb upg57541    0 Mar 17 22:12 file4
+< -rw-rw----. 1 brewsteb upg57541 5831 Mar 17 22:12 file5
+< -rwxrwx---. 1 brewsteb upg57541 4018 Mar 17 22:12 stats
+---
+> total 28
+> -rw-rw-r-- 1 brandon brandon  259 Apr 10 18:20 file1
+> -rw-rw-r-- 1 brandon brandon   49 Apr 10 18:20 file2
+> -rw-rw-r-- 1 brandon brandon    3 Apr 10 18:20 file3
+> -rw-rw-r-- 1 brandon brandon    0 Apr 10 18:20 file4
+> -rw-rw-r-- 1 brandon brandon 5831 Apr 10 18:20 file5
+> -rwxrwxr-x 1 brandon brandon 5193 Apr 10 18:20 stats
+19,20c19
+< 86	84
+< 74	81
+---
+> 86	83
+22,25c21,25
+< 80	81
+< 64	61
+< 55	54
+< 54	53
+---
+> 74	79
+> 80	68
+> 64	57
+> 55	45
+> 54	44
+46c46
+< 80	57	83	73	88	79	80	71	100	
+---
+> 73	55	82	63	70	79	73	68	100	
+66c66
+< 71	73
+---
+> 71	61
+76c76
+< 95	94	93	99	
+---
+> 95	94	93	92	
+116c116
+< 25000	50000	
+---
+> 32300	54800	
+137c137
+< 71	73
+---
+> 71	61
+144c144
+< 85	86	83	96	
+---
+> 349	349	349	349	
+146c146
+< 95	94	93	99	
+---
+> 61	61	61	61	
+154c154
+< 95	94	93	99	
+---
+> 95	94	93	92	
+162c162
+< 71	73
+---
+> 71	61
+171c171
+< 95	94	93	99	
+---
+> 95	94	93	92	
+179c179
+< 71	73
+---
+> 71	61
+191c191,193
+< ./stats {-rows|-cols} [file]
+---
+> Incorect number of arguments recieved
+> use format: stats {-rows|-cols} [input_file] 
+> Exiting stats program now
+196c198,200
+< ./stats {-rows|-cols} [file]
+---
+> Incorect number of arguments recieved
+> use format: stats {-rows|-cols} [input_file] 
+> Exiting stats program now
+201c205,206
+< ./stats {-rows|-cols} [file]
+---
+> Incorect selector flag, Exiting now 
+> Exiting stats program now
+206c211,212
+< ./stats {-rows|-cols} [file]
+---
+> Incorect selector flag, Exiting now 
+> Exiting stats program now
+215c221,222
+< ./stats: cannot read file3
+---
+> File is unreadable or does not exist 
+> Exiting stats program now
+249,250c256
+< 86	84
+< 74	81
+---
+> 86	83
+252,255c258,262
+< 80	81
+< 64	61
+< 55	54
+< 54	53
+---
+> 74	79
+> 80	68
+> 64	57
+> 55	45
+> 54	44
+261,262c268
+< 86	84
+< 74	81
+---
+> 86	83
+264,267c270,274
+< 80	81
+< 64	61
+< 55	54
+< 54	53
+---
+> 74	79
+> 80	68
+> 64	57
+> 55	45
+> 54	44
+273,274c280
+< 86	84
+< 74	81
+---
+> 86	83
+276,279c282,286
+< 80	81
+< 64	61
+< 55	54
+< 54	53
+---
+> 74	79
+> 80	68
+> 64	57
+> 55	45
+> 54	44
+295a303,304
+> 18917outfile
+> 18917statfile
+302d310
+< stats_input10344
+305,308c313,316
+<  6300 pts/97   00:00:00 p1gradingscript
+< 10344 pts/97   00:00:00 stats
+< 11278 pts/97   00:00:00 ps
+< 27336 pts/97   00:00:00 tcsh
+---
+> 14296 pts/20   00:00:00 bash
+> 15786 pts/20   00:00:00 p1gradingscript
+> 18917 pts/20   00:00:00 stats
+> 21972 pts/20   00:00:00 ps
+320,322c328,330
+<  6300 pts/97   00:00:00 p1gradingscript
+< 11326 pts/97   00:00:00 ps
+< 27336 pts/97   00:00:00 tcsh
+---
+> 14296 pts/20   00:00:00 bash
+> 15786 pts/20   00:00:00 p1gradingscript
+> 21997 pts/20   00:00:00 ps

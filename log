@@ -1705,3 +1705,31 @@ outputing collum stats
 calling cleanup with succesfull exit code
 program exiting with exit code 0
 removed ‘17166outfile’
+
+
+-------Logging For stats pid 17544---------
+1 of command args recieved
+program exiting with exit code 1
+rm: cannot remove ‘17544*’: No such file or directory
+Error Message: No file specified and no input available
+
+
+-------Logging For stats pid 17550---------
+1 of command args recieved
+program exiting with exit code 1
+rm: cannot remove ‘17550*’: No such file or directory
+Error Message: No file specified and no input available
+
+
+-------Logging For stats pid 17556---------
+1 of command args recieved
+program exiting with exit code 1
+rm: cannot remove ‘17556*’: No such file or directory
+Error Message: No file specified and no input available
+
+
+-------Logging For stats pid 17562---------
+1 of command args recieved
+program exiting with exit code 1
+rm: cannot remove ‘17562*’: No such file or directory
+Error Message: No file specified and no input available

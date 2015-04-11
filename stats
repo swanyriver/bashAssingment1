@@ -130,6 +130,8 @@ fi
 
 
 #########Find mean and median for each field#######
+#create a new empty file
+cp /dev/null $out_file
 for ((field=1;field<=$num_fields;field++)); do
 
     echo "processing row/group: $field" >>$logfile
