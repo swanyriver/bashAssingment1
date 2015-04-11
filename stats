@@ -145,7 +145,10 @@ for ((field=1;field<=$num_fields;field++)); do
     average=$(expr $fieldsum / $num_entries)
     echo "average of row/col $field is:$average" >>$logfile
 
-    #TODO  Round up average (including .5)  use expr n%m
+    #Round up average (including .5)
+    if [[ $(expr $fieldsum % $num_entries) -ge $(expr %num_entries / 2 + %num_entries % 2) ]]; then
+        $average++
+    fi
 
     echo -n $average >>$out_file
 
