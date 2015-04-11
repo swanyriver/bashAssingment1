@@ -147,16 +147,20 @@ for ((field=1;field<=$num_fields;field++)); do
 
     #TODO  Round up average (including .5)  use expr n%m
 
-    echo $average >>$out_file
+    echo -n $average >>$out_file
 
     ####MEDIAN######
-    #TODO  find median
+    #TODO multiline the pipes
+    median=$(echo $group | tr ' ' '\n' | sort | head -$(expr $num_entries / 2  + 1) | tail -$(expr 2 - $num_entries % 2) | sort | tail -1)
+    echo "median of row/col $field is:$median" >>$logfile
 
-    #-n prevents newline
-    echo -n $median >>$out_file
+    echo -e "\t$median" >>$out_file
 
 
 done
+
+echo "Result file:" >>$logfile
+cat $out_file >>$logfile
 
 
 #############Print output####################
@@ -164,14 +168,22 @@ done
 if $collumns ; then
     #print collumns stats
     echo "outputing collum stats" >>$logfile
-    #for avg/med field
-    #cut -f # $out_file | tr '\n' '\t'
+
+    echo "Averages:"
+    cut -f 1 $out_file | tr '\n' '\t'
+
+    echo -e "\nMedians:"
+    cut -f 2 $out_file | tr '\n' '\t'
+    echo ""
 else
     #print row stats
     echo "outputing row stats" >>$logfile
+
+    echo -e "Average\tMedian"
+    cat $out_file
 fi
 
 
-echo "program exiting without error" >>$logfile
+echo "calling cleanup with succesfull exit code" >>$logfile
 #exiting program succesfully
 cleanExit 0
