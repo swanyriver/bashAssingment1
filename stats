@@ -157,7 +157,7 @@ for ((field=1;field<=$num_fields;field++)); do
 
     ####MEDIAN######
     #TODO multiline the pipes
-    median=$(echo $group | tr ' ' '\n' | sort | head -$(expr $num_entries / 2  + 1) | tail -$(expr 2 - $num_entries % 2) | tail -1)
+    median=$(echo $group | tr ' ' '\n' | sort -g | head -$(expr $num_entries / 2  + 1) | tail -$(expr 2 - $num_entries % 2) | tail -1)
     echo "median of row/col $field is:$median" >>$logfile
 
     echo -e "\t$median" >>$out_file
