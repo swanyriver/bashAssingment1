@@ -1,13 +1,18 @@
 #!/bin/bash
 
-####Clean up and cleanExit function###Recieves cleanExit code##
+############### CleanExit ##################
+#### Clean up temp files and Exit ##########
+## arg1: Exit code                        ##
+## arg2: Error Message                    ##
+############################################
 function cleanExit {
     
     echo "program exiting with exit code $1" >>$logfile
 
-    #change to -f before submiting  TODO
-    rm -I -v $$* >>$logfile 2>>$logfile
+    #Remove all temporary files prepended by PID
+    rm -f -v $$* >>$logfile
 
+    #if exiting unsucseffully print error message recieved in $2
     if [[ ! "$1" == 0 ]]; then
         echo "Error Message: $2" >>$logfile
         echo -e "$2 \nExiting stats program now" >&2
@@ -17,7 +22,7 @@ function cleanExit {
 }
 
 
-#Set trap to exit gracefully on error
+#Set trap to exit gracefully on interupt hang-up or terminate signals
 trap "cleanExit 1 \"process interupted\"" INT HUP TERM
 
 
@@ -32,16 +37,18 @@ if [ -z "$logfile" ] ; then
 fi
 echo -e "\n\n-------Logging For stats pid $$---------" >>$logfile
 
-#VARIABLE DECLARATIONS
+###Temporary files are prepended with PID for easy deletion later
+#######VARIABLE DECLARATIONS######
 stat_file="$$statfile"
-out_file="$$outfile"
+out_file="$$outfile"   
 Usage_Text="./stats {-rows|-cols} [input_file]"
 
+################################################################
 #################Process command args###########################
+################################################################
 
-##check number
+##check that one or two arguments recieved
 echo "$# of command args recieved" >>$logfile
-
 if [[ ! ( "$#" == 1 || "$#" == "2" ) ]] ; then 
     cleanExit 1 "Incorect number of arguments recieved\n$Usage_Text"
 fi
@@ -57,10 +64,9 @@ if [[ "$#" == "2" ]] ; then
         cleanExit 1 "File is unreadable or does not exist"
     fi
 
-
-
+##only one argument recived, input should be in stdinput
 else
-    #detect std in
+    #detect stdin data
     if [ ! -t 0 ] ; then
     	echo "recieving input from STDIN" >>$logfile
 
@@ -85,11 +91,16 @@ else
 fi
 
 ############error check and record -r/-c###################################
-###check that it is -r || -c
-###assign collumns accordingly and getGroup acordingly
-### use getgroup with command subtition to store result, $1 is row/col num
-### nextLine=$(getGroup n)
+###check that it is -r || -c  and define getGroup accordingly       #######
 ###########################################################################
+
+############### getGroup  ##################
+#### return a single row or collumn ########
+## arg1: row or collumn number            ##
+##                                        ##
+## tab delimed entries retruned in stdout ##
+############################################
+
 echo "abreviated flag is ${1:0:2}" >>$logfile
 if [[ "${1:0:2}" == "-r" ]]; then
 
@@ -121,11 +132,12 @@ fi
 ########################################################################
 
 
-#count cols and rows
+#count cols and rows using word count
 num_fields=$(cat $stat_file | wc -l)
 num_entries=$(head -1 $stat_file | wc -w)
 echo "data has $num_fields rows with $num_entries entries each" >>$logfile
 
+#reverse fields/entries count if processing collumns
 if $collumns ; then
     temp=$num_fields
     num_fields=$num_entries
@@ -133,19 +145,21 @@ if $collumns ; then
     echo "entries/fields adjusted for collum fields:$num_fields entries:$num_entries" >>$logfile
 fi    
 
+#create a new empty file for holding results
+cp /dev/null $out_file
 
 #########Find mean and median for each field#######
-#create a new empty file
-cp /dev/null $out_file
 for ((field=1;field<=$num_fields;field++)); do
 
     echo "processing row/group: $field" >>$logfile
     
+    #tab delimiated entries become space delimiated after this variable assignment
     group=$(getGroup $field)
 
     echo "$group" >>$logfile
 
     ####AVERAGE#####
+    ## Sum found using translate to replace spaces with + and piping to BC
     fieldsum=$(echo $group | tr " " "+" | bc)
     echo "sum of row/col $field is:$fieldsum" >>$logfile
 
@@ -153,23 +167,24 @@ for ((field=1;field<=$num_fields;field++)); do
     echo "average of row/col $field is:$average" >>$logfile
 
     #Round up average (including .5)
+    # if the remainder is greater than or equal to half the divisor (rounded up) then result will round up
     if [[ $(expr $fieldsum % $num_entries) -ge $(expr $num_entries / 2 + $num_entries % 2) ]]; then
     ((average++))
     fi
 
+    #put result in output file without a trailing newline
     echo -n $average >>$out_file
 
     ####MEDIAN######
-    median=$(echo $group | tr ' ' '\n' | sort -g | head -$(expr $num_entries / 2  + 1) | tail -$(expr 2 - $num_entries % 2) | tail -1)
+    #Entries are first return seperated, so that they can be sent to sort, then using head the
+    #first 1/2 (+1 for odd) are selected and then using tail the last entrie kept
+    median=$(echo $group | tr ' ' '\n' | sort -g | head -$(expr $num_entries / 2  + 1) | tail -1)
     echo "median of row/col $field is:$median" >>$logfile
     echo -e "\t$median" >>$out_file
-
-
 done
 
 echo "Result file:" >>$logfile
 cat $out_file >>$logfile
-
 
 #############Print output####################
 
@@ -177,9 +192,11 @@ if $collumns ; then
     #print collumns stats
     echo "outputing collum stats" >>$logfile
 
+    #print first collumn of output file replacing returns with tabs
     echo "Averages:"
     cut -f 1 $out_file | tr '\n' '\t'
 
+    #print second collumn of output file replacing returns with tabs
     echo -e "\nMedians:"
     cut -f 2 $out_file | tr '\n' '\t'
     echo ""
@@ -187,10 +204,10 @@ else
     #print row stats
     echo "outputing row stats" >>$logfile
 
+    #print a header and then the entire contents of output file as-is
     echo -e "Average\tMedian"
     cat $out_file
 fi
-
 
 echo "calling cleanup with succesfull exit code" >>$logfile
 #exiting program succesfully
