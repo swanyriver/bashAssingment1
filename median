@@ -11,3 +11,4 @@ echo " entries $num_entries"
 #cat $1 | tr '\t' '\n' | sort | head -$(expr $num_entries / 2  + 1) | tail -$(expr 2 - $num_entries % 2) | sort | tail -1
 
 echo $line | tr ' ' '\n' | sort -g #| head -$(expr $num_entries / 2  + 1) | tail -$(expr 2 - $num_entries % 2) #| head -1
+
